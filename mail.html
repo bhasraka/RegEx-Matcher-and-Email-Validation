@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Id Verification</title>
+</head>
+<body>
+    <h1>Email Validation</h1>
+        <form action="/validate_email" method="post">
+            <label>Enter your email id:</label> <br> <br>
+            <input type="text" name="mail" value="{{ text }}" autocomplete="off" required>
+            <br> <br>
+            <input type="submit" value="verify">
+        </form>
+        <ul>
+            {% if valid_mail == True %}
+                <li class="valid">Valid email</li>
+            {% elif valid_mail == False %}
+                <li class="invalid">Not a valid email</li>
+            {% endif %}
+        </ul>
+</body>
+</html>

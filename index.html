@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegeEx Matcher 101</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Regex Matcher 101</a></li>
+            <li><a href="/email">Email Validation</a></li>
+        </ul>
+    </nav>
+    <h3>REGULAR EXPRESSION:</h3> <br>
+    <form action="/results" method="post">
+    <textarea id="text" name = "pattern" placeholder = "insert your regular expression here" rows="4" cols="50" autocomplete="off" required></textarea>
+            <br> <br>
+            <h3>Test string:</h3> <br>
+            <textarea id="text" name="text" placeholder = "insert your test string here" rows="10" cols="100" autocomplete="off" required>{{ text }}</textarea>
+            <br>
+            <button type="submit">Search</button>
+    </form>
+    <h3>Matches:</h3> 
+        <p>
+            {% for match in matches %}
+                {{ match }}
+                {% if not loop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+</body>
+</html>
+
+
+
+
